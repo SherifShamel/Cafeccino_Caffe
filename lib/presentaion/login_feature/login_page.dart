@@ -13,7 +13,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     var controller = PageController();
-    bool isActive = false;
 
     return Scaffold(
       body: Center(

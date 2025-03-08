@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../../core/constants.dart';
 import '../../../core/widgets/custom_text_form_field.dart';
 
 class CustomPageView extends StatefulWidget {
