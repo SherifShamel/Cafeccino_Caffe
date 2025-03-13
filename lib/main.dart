@@ -1,6 +1,7 @@
 import 'package:caffecino/core/config/page_route_names.dart';
 import 'package:caffecino/core/config/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 
@@ -15,12 +16,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      initialRoute: PageRouteName.initial,
-      onGenerateRoute: Routes.onGenerateRoute,
-      navigatorKey: navigatorKey,
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        initialRoute: PageRouteName.initial,
+        onGenerateRoute: Routes.onGenerateRoute,
+        navigatorKey: navigatorKey,
+      ),
     );
   }
 }
