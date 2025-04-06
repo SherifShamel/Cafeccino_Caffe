@@ -11,6 +11,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     var controller = PageController();
@@ -36,19 +37,27 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
-                    child: Row(
-                      spacing: 4,
-                      children: [
-                        Icon(
-                          Icons.check_circle_outline_outlined,
-                          color: Color(kPrimaryColor),
-                        ),
-                        Text(
-                          'Remember Me',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(color: Color(kPrimaryColor)),
-                        ),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        isChecked = !isChecked;
+                        setState(() {});
+                      },
+                      child: Row(
+                        spacing: 4,
+                        children: [
+                          Icon(
+                            isChecked
+                                ? Icons.check_circle_outline_outlined
+                                : Icons.circle_outlined,
+                            color: Color(kPrimaryColor),
+                          ),
+                          Text(
+                            'Remember Me',
+                            textAlign: TextAlign.start,
+                            style: TextStyle(color: Color(kPrimaryColor)),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -85,9 +94,19 @@ class _LoginPageState extends State<LoginPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Icon(Icons.facebook),
-                      Icon(Icons.g_mobiledata),
-                      Icon(Icons.apple)
+                      ImageIcon(
+                        AssetImage("assets/icons/facebook.png"),
+                        size: 28,
+                        color: Color(0xff1877F2),
+                      ),
+                      ImageIcon(
+                        AssetImage("assets/icons/google.png"),
+                        size: 28,
+                      ),
+                      ImageIcon(
+                        AssetImage("assets/icons/iphone.png"),
+                        size: 28,
+                      ),
                     ],
                   ),
                   RichText(

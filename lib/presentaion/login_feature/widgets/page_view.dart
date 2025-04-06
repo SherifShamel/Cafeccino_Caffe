@@ -55,7 +55,6 @@ class _CustomPageViewState extends State<CustomPageView> {
             ),
           ],
         ),
-
         SizedBox(
           height: 150,
           child: PageView(
@@ -65,32 +64,36 @@ class _CustomPageViewState extends State<CustomPageView> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MyCustomTextFormField(
+                  CustomTextField(
                     prefixIcon: Icon(Icons.email),
-                    hintText: 'Email',
+                    hint: 'Email',
                   ),
                   SizedBox(
                     height: 12,
                   ),
-                  MyCustomTextFormField(
-                    prefixIcon: Icon(Icons.password),
-                    hintText: 'Password',
+                  CustomTextField(
+                    prefixIcon: ImageIcon(
+                      AssetImage("assets/icons/password_icon.png"),
+                    ),
+                    hint: 'Password',
                   ),
                 ],
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MyCustomTextFormField(
-                    hintText: 'Phone',
+                  CustomTextField(
+                    hint: 'Phone',
                     prefixIcon: Icon(Icons.phone),
                   ),
                   SizedBox(
                     height: 12,
                   ),
-                  MyCustomTextFormField(
-                    hintText: 'Password',
-                    prefixIcon: Icon(Icons.password),
+                  CustomTextField(
+                    prefixIcon: ImageIcon(
+                      AssetImage("assets/icons/password_icon.png"),
+                    ),
+                    hint: 'Password',
                   ),
                 ],
               ),
