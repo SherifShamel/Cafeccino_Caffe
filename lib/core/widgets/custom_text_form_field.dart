@@ -100,7 +100,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         counterText: "",
         border: const UnderlineInputBorder(),
         // suffix: isPass widget.suffixWidget,
-        contentPadding: const EdgeInsets.only(top: 5,left: 5, right: 5),
+        contentPadding: const EdgeInsets.only(top: 5, left: 5, right: 5),
         // disabledBorder: UnderlineInputBorder(
         //   borderSide: BorderSide(
         //     color: Colors.grey.shade200,

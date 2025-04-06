@@ -1,5 +1,8 @@
+import 'package:caffecino/core/config/page_route_names.dart';
 import 'package:caffecino/core/constants.dart';
+import 'package:caffecino/main.dart';
 import 'package:caffecino/presentaion/login_feature/widgets/page_view.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -109,16 +112,40 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ],
                   ),
-                  RichText(
-                    text: TextSpan(
-                        text: 'Don\'t have an account?',
+                  // RichText(
+                  //   text: TextSpan(
+                  //       text: 'Don\'t have an account?',
+                  //       style: TextStyle(color: Colors.black54),
+                  //       children: [
+                  //         TextSpan(
+                  //           text: ' Sign Up',
+                  //           recognizer: TapGestureRecognizer()
+                  //             ..onTap = () {
+                  //               navigatorKey.currentState!
+                  //                   .pushNamed(PageRouteName.register);
+                  //             },
+                  //           style: TextStyle(color: Color(0xff3FB6FF)),
+                  //         ),
+                  //       ]),
+                  // )
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Don\'t have an account? ',
                         style: TextStyle(color: Colors.black54),
-                        children: [
-                          TextSpan(
-                            text: ' Sign Up',
-                            style: TextStyle(color: Color(0xff3FB6FF)),
-                          ),
-                        ]),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          navigatorKey.currentState!
+                              .pushNamed(PageRouteName.register);
+                        },
+                        child: Text(
+                          'Sign Up',
+                          style: TextStyle(color: Color(0xff3FB6FF)),
+                        ),
+                      ),
+                    ],
                   )
                 ],
               ),
